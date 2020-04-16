@@ -10,7 +10,13 @@ module.exports = {
       },
       storyId: {
         type: Sequelize.INTEGER,
-        allowNull: false
+        allowNull: false,
+        references: {
+          model: "stories",
+          id: "id"
+        },
+        onUpdate: "CASCADE",
+        onDelete: "SET NULL",
       },
       text: {
         type: Sequelize.TEXT

@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     timesRead: DataTypes.INTEGER
   }, {});
   paragraph.associate = function(models) {
-    // associations can be defined here
+    paragraph.belongsTo(models.story)
   };
   return paragraph;
 };
