@@ -20,7 +20,7 @@ router.get("/:storyId", async (req, res) => {
   try {
     const oneStory = await Story.findOne({
       where: { id: req.params.storyId },
-      include: [Paragraph, User],
+      include: [User],
     });
     res.status(200).json(oneStory);
   } catch (e) {
@@ -28,10 +28,10 @@ router.get("/:storyId", async (req, res) => {
   }
 });
 
-router.get("/:storyId/:paragraphId", async (req, res) => {
+router.get("/:storyId/:paragraphNumber", async (req, res) => {
   try {
     const paragraph = await Paragraph.findOne({
-      where: { storyId: req.params.storyId, paragraphNumber: req.params.paragraphId },
+      where: { storyId: req.params.storyId, paragraphNumber: req.params.paragraphNumber },
     });
     res.status(200).json(paragraph);
   } catch (e) {

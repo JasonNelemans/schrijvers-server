@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-  up: (queryInterface, Sequelize) => {
+  up: async (queryInterface, Sequelize) => {
     await queryInterface.addColumn("paragraphs", "paragraphNumber", {
       type: Sequelize.INTEGER,
       onUpdate: "CASCADE",
@@ -9,7 +9,7 @@ module.exports = {
       allowNull: false
     });
   },
-  down: (queryInterface, Sequelize) => {
+  down: async (queryInterface, Sequelize) => {
       return queryInterface.removeColumn("paragraphs", "paragraphNumber");
   }
 };
