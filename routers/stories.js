@@ -6,9 +6,7 @@ const router = new Router();
 
 router.get("/", async (req, res) => {
   try {
-    const allStories = await Story.findAll({
-      include: [Paragraph]
-    })
+    const allStories = await Story.findAll()
     res.status(200).json(allStories);
   }
   catch (e) {
