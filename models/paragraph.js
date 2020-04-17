@@ -6,7 +6,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
     text: DataTypes.TEXT,
-    timesRead: DataTypes.INTEGER
+    timesRead: DataTypes.INTEGER,
+    paragraphNumber: DataTypes.INTEGER
   }, {});
   paragraph.associate = function(models) {
     paragraph.belongsTo(models.story)
