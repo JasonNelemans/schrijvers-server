@@ -13,6 +13,7 @@ router.get("/", async (req, res) => {
     res.status(200).json(allStories);
   } catch (e) {
     console.log("error: ", e);
+    return res.status(400).send({ message: "Something went wrong, sorry" });
   }
 });
 
@@ -25,6 +26,7 @@ router.get("/:storyId", async (req, res) => {
     res.status(200).json(oneStory);
   } catch (e) {
     console.log("error: ", e);
+    return res.status(400).send({ message: "Something went wrong, sorry" });
   }
 });
 
@@ -36,6 +38,7 @@ router.get("/:storyId/:paragraphNumber", async (req, res) => {
     res.status(200).json(paragraph);
   } catch (e) {
     console.log("error: ", e);
+    return res.status(400).send({ message: "Something went wrong, sorry" });
   }
 });
 
