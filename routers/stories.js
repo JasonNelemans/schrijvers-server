@@ -17,7 +17,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:storyId", async (req, res) => {
+router.get("/story/:storyId", async (req, res) => {
   try {
     const oneStory = await Story.findOne({
       where: { id: req.params.storyId },
@@ -30,10 +30,13 @@ router.get("/:storyId", async (req, res) => {
   }
 });
 
-router.get("/:storyId/:paragraphNumber", async (req, res) => {
+router.get("/paragraph/:storyId/:paragraphNumber", async (req, res) => {
   try {
     const paragraph = await Paragraph.findOne({
-      where: { storyId: req.params.storyId, paragraphNumber: req.params.paragraphNumber },
+      where: {
+        storyId: req.params.storyId,
+        paragraphNumber: req.params.paragraphNumber,
+      },
     });
     res.status(200).json(paragraph);
   } catch (e) {
@@ -41,5 +44,20 @@ router.get("/:storyId/:paragraphNumber", async (req, res) => {
     return res.status(400).send({ message: "Something went wrong, sorry" });
   }
 });
+
+router.get("/user/:userId", async (req, res) => {
+  try {
+    const storyByUser = await Story.findAll({
+      where: { userId: req.params.userId},
+      include: [Paragraph]
+    })
+    res.status(200).json(storyByUser);
+  }
+  catch (e) {
+    console.log(e)
+    return res.status(400).send({ message: "Something went wrong, sorry" });
+  }
+})
+
 
 module.exports = router;
