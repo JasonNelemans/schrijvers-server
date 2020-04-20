@@ -48,14 +48,29 @@ router.get("/paragraph/:storyId/:paragraphNumber", async (req, res) => {
 router.get("/user/:userId", async (req, res) => {
   try {
     const storyByUser = await Story.findAll({
-      where: { userId: req.params.userId},
-      include: [Paragraph]
+      where: { userId: req.params.userId}
     })
     res.status(200).json(storyByUser);
   }
   catch (e) {
     console.log(e)
     return res.status(400).send({ message: "Something went wrong, sorry" });
+  }
+})
+
+router.get("/user/story/:userId/:storyId", async (req, res) => {
+  try {
+    const storyInfo = await Story.findOne({
+      where: {
+        id: req.params.storyId,
+        userId: req.params.userId,
+      },
+      include: [Paragraph]
+    })
+    res.status(200).json(storyInfo);
+  }
+  catch (e) {
+    console.log('error: ', e)
   }
 })
 
