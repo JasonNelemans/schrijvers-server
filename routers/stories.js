@@ -92,6 +92,9 @@ router.get("/user/story/:userId/:storyId", async (req, res) => {
         userId: req.params.userId,
       },
       include: [Paragraph],
+      order: [
+        [{ model: Paragraph, as: 'paragraphs' }, 'id', 'ASC']
+      ]
     });
 
     res.status(200).json(storyInfo);
