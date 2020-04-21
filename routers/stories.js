@@ -10,6 +10,7 @@ router.get("/", async (req, res) => {
     const allStories = await Story.findAll({
       include: [User],
     });
+
     res.status(200).json(allStories);
   } catch (e) {
     console.log("error: ", e);
@@ -23,6 +24,7 @@ router.get("/story/:storyId", async (req, res) => {
       where: { id: req.params.storyId },
       include: [User],
     });
+
     res.status(200).json(oneStory);
   } catch (e) {
     console.log("error: ", e);
@@ -38,9 +40,11 @@ router.get("/paragraph/:storyId/:paragraphNumber", async (req, res) => {
         paragraphNumber: req.params.paragraphNumber,
       },
     });
+
     res.status(200).json(paragraph);
   } catch (e) {
     console.log("error: ", e);
+
     return res.status(400).send({ message: "Something went wrong, sorry" });
   }
 });
@@ -48,15 +52,15 @@ router.get("/paragraph/:storyId/:paragraphNumber", async (req, res) => {
 router.get("/user/:userId", async (req, res) => {
   try {
     const storyByUser = await Story.findAll({
-      where: { userId: req.params.userId}
-    })
+      where: { userId: req.params.userId },
+    });
+
     res.status(200).json(storyByUser);
-  }
-  catch (e) {
-    console.log(e)
+  } catch (e) {
+    console.log(e);
     return res.status(400).send({ message: "Something went wrong, sorry" });
   }
-})
+});
 
 router.get("/user/story/:userId/:storyId", async (req, res) => {
   try {
@@ -65,14 +69,32 @@ router.get("/user/story/:userId/:storyId", async (req, res) => {
         id: req.params.storyId,
         userId: req.params.userId,
       },
-      include: [Paragraph]
-    })
-    res.status(200).json(storyInfo);
-  }
-  catch (e) {
-    console.log('error: ', e)
-  }
-})
+      include: [Paragraph],
+    });
 
+    res.status(200).json(storyInfo);
+  } catch (e) {
+    console.log("error: ", e);
+    return res.status(400).send({ message: "Something went wrong, sorry" });
+  }
+});
+
+router.patch("/clicktitle", async (req, res, next) => {
+  try {
+    const { id, titleClicked } = req.body;
+    await Story.update(
+      {
+        titleClicked,
+      },
+      {
+        where: { id },
+      }
+    );
+
+    res.json("updated title!");
+  } catch (e) {
+    next(e);
+  }
+});
 
 module.exports = router;
