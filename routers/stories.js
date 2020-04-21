@@ -9,6 +9,9 @@ router.get("/", async (req, res) => {
   try {
     const allStories = await Story.findAll({
       include: [User],
+      order: [
+        ['id', 'ASC']
+      ]
     });
 
     res.status(200).json(allStories);
@@ -75,6 +78,9 @@ router.get("/user/:userId", async (req, res) => {
   try {
     const storyByUser = await Story.findAll({
       where: { userId: req.params.userId },
+      order: [
+        ['id', 'ASC']
+      ]
     });
 
     res.status(200).json(storyByUser);
