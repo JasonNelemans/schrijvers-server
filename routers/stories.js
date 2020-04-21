@@ -49,6 +49,28 @@ router.get("/paragraph/:storyId/:paragraphNumber", async (req, res) => {
   }
 });
 
+router.patch("/update/paragraph/read", async (req, res, next) => {
+  try {
+    const { storyId, paragraphNumber, timesRead } = req.body;
+    await Paragraph.update(
+      {
+        timesRead,
+      },
+      {
+        where: {
+          storyId,
+          paragraphNumber,
+        },
+      }
+    );
+
+    res.status(200).json("paragraph updated!");
+  } catch (e) {
+    console.log("error: ", e);
+    next(e);
+  }
+});
+
 router.get("/user/:userId", async (req, res) => {
   try {
     const storyByUser = await Story.findAll({
