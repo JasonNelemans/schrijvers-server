@@ -9,9 +9,7 @@ router.get("/", async (req, res) => {
   try {
     const allStories = await Story.findAll({
       include: [User],
-      order: [
-        ['id', 'ASC']
-      ]
+      order: [["id", "ASC"]],
     });
 
     res.status(200).json(allStories);
@@ -78,9 +76,7 @@ router.get("/user/:userId", async (req, res) => {
   try {
     const storyByUser = await Story.findAll({
       where: { userId: req.params.userId },
-      order: [
-        ['id', 'ASC']
-      ]
+      order: [["id", "ASC"]],
     });
 
     res.status(200).json(storyByUser);
@@ -98,9 +94,7 @@ router.get("/user/story/:userId/:storyId", async (req, res) => {
         userId: req.params.userId,
       },
       include: [Paragraph],
-      order: [
-        [{ model: Paragraph, as: 'paragraphs' }, 'id', 'ASC']
-      ]
+      order: [[{ model: Paragraph, as: "paragraphs" }, "id", "ASC"]],
     });
 
     res.status(200).json(storyInfo);
@@ -112,16 +106,9 @@ router.get("/user/story/:userId/:storyId", async (req, res) => {
 
 router.patch("/clicktitle", async (req, res, next) => {
   try {
-    const { id, titleClicked } = req.body;
-    await Story.update(
-      {
-        titleClicked,
-      },
-      {
-        where: { id },
-      }
-    );
-
+    const { id } = req.body;
+    const story = await Story.findByPk(id);
+    story.update({ titleClicked: story.titleClicked + 1 });
     res.json("updated title!");
   } catch (e) {
     next(e);
