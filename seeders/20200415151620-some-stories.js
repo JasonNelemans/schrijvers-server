@@ -13,6 +13,7 @@ module.exports = {
           userId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
+          titleClicked: 5
         },
         {
           title: "Second Lorem Ipsum",
@@ -22,6 +23,7 @@ module.exports = {
           userId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
+          titleClicked: 5
         },
         {
           title: "Third Lorem Ipsum",
@@ -31,6 +33,7 @@ module.exports = {
           userId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
+          titleClicked: 8
         },
         {
           title: "Fourth Lorem Ipsum",
@@ -40,6 +43,7 @@ module.exports = {
           userId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
+          titleClicked: 0
         },
         {
           title: "Fifth Lorem Ipsum",
@@ -49,6 +53,7 @@ module.exports = {
           userId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
+          titleClicked: 0
         },
         {
           title: "Sixth Lorem Ipsum",
@@ -58,6 +63,7 @@ module.exports = {
           userId: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
+          titleClicked: 0
         },
         {
           title: "Seventh Lorem Ipsum",
@@ -67,6 +73,7 @@ module.exports = {
           userId: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
+          titleClicked: 0
         },
         {
           title: "Eigth Lorem Ipsum",
@@ -76,6 +83,7 @@ module.exports = {
           userId: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
+          titleClicked: 0
         },
         {
           title: "Ninth Lorem Ipsum",
@@ -85,6 +93,7 @@ module.exports = {
           userId: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
+          titleClicked: 0
         },
         {
           title: "Tenth Lorem Ipsum",
@@ -94,6 +103,7 @@ module.exports = {
           userId: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
+          titleClicked: 0
         },
       ],
       {}

@@ -9,14 +9,15 @@ module.exports = (sequelize, DataTypes) => {
       wordCount: DataTypes.INTEGER,
       userId: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
       },
+      titleClicked: DataTypes.INTEGER,
     },
     {}
   );
   story.associate = function (models) {
-    story.belongsTo(models.user)
-    story.hasMany(models.paragraph)
+    story.belongsTo(models.user);
+    story.hasMany(models.paragraph);
   };
   return story;
 };
