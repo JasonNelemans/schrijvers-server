@@ -6,104 +6,124 @@ module.exports = {
       "stories",
       [
         {
-          title: "First Lorem Ipsum",
-          type: 'Original fiction',
-          genre: 'Mystery',
+          title: "Eerste Lorem Ipsum",
+          type: 'Originele fictie',
+          genre: 'Mysterie',
           wordCount: 1500,
           userId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
-          titleClicked: 5
+          titleClicked: 5,
+          pg: 12, 
+          imgUrl: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1332&q=80'
         },
         {
-          title: "Second Lorem Ipsum",
-          type: 'Fan fiction',
-          genre: 'Fantasy',
+          title: "Tweede Lorem Ipsum",
+          type: 'Fan fictie',
+          genre: 'Fantasie',
           wordCount: 1400,
           userId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
-          titleClicked: 5
+          titleClicked: 5,
+          pg: 12,
+          imgUrl: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1332&q=80'
         },
         {
-          title: "Third Lorem Ipsum",
-          type: 'True story',
-          genre: 'Romance',
+          title: "Derde Lorem Ipsum",
+          type: 'Waargebeurd',
+          genre: 'Romantiek',
           wordCount: 1450,
           userId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
-          titleClicked: 8
+          titleClicked: 8,
+          pg: 18,
+          imgUrl: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1332&q=80'
         },
         {
-          title: "Fourth Lorem Ipsum",
-          type: 'Original fiction',
-          genre: 'Thriller',
+          title: "Vierde Lorem Ipsum",
+          type: 'Originele fictie',
+          genre: 'Spanning',
           wordCount: 1300,
           userId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
-          titleClicked: 0
+          titleClicked: 0,
+          pg: 16,
+          imgUrl: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1332&q=80'
         },
         {
-          title: "Fifth Lorem Ipsum",
-          type: 'True story',
+          title: "Vijfe Lorem Ipsum",
+          type: 'Waargebeurd',
           genre: 'Horror',
           wordCount: 1500,
           userId: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
-          titleClicked: 0
+          titleClicked: 0,
+          pg: 16,
+          imgUrl: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1332&q=80'
         },
         {
-          title: "Sixth Lorem Ipsum",
-          type: 'Original fiction',
-          genre: 'Mystery',
+          title: "Zesde Lorem Ipsum",
+          type: 'Originele fictie',
+          genre: 'Mysterie',
           wordCount: 1500,
           userId: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
-          titleClicked: 0
+          titleClicked: 0,
+          pg: 16,
+          imgUrl: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1332&q=80'
         },
         {
-          title: "Seventh Lorem Ipsum",
-          type: 'Fan fiction',
+          title: "Zevende Lorem Ipsum",
+          type: 'Fan fictie',
           genre: 'Science-fiction',
           wordCount: 1222,
           userId: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
-          titleClicked: 0
+          titleClicked: 0,
+          pg: 12,
+          imgUrl: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1332&q=80'
         },
         {
-          title: "Eigth Lorem Ipsum",
-          type: 'True story',
+          title: "Achtste Lorem Ipsum",
+          type: 'Waargebeurd',
           genre: 'Coming-of-age',
           wordCount: 1150,
           userId: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
-          titleClicked: 0
+          titleClicked: 0,
+          pg: 12,
+          imgUrl: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1332&q=80'
         },
         {
-          title: "Ninth Lorem Ipsum",
-          type: 'Original fiction',
-          genre: 'Crime',
+          title: "Negende Lorem Ipsum",
+          type: 'Originele fictie',
+          genre: 'Misdaad',
           wordCount: 1500,
           userId: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
-          titleClicked: 0
+          titleClicked: 0,
+          pg: 12,
+          imgUrl: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1332&q=80'
         },
         {
-          title: "Tenth Lorem Ipsum",
-          type: 'True story',
-          genre: 'Crime',
+          title: "Tiende Lorem Ipsum",
+          type: 'Waargebeurd',
+          genre: 'Misdaad',
           wordCount: 999,
           userId: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
-          titleClicked: 0
+          titleClicked: 0,
+          pg: 16,
+          imgUrl: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1332&q=80'
         },
       ],
       {}
