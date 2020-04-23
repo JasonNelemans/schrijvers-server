@@ -12,6 +12,8 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
       },
       titleClicked: DataTypes.INTEGER,
+      pg: DataTypes.INTEGER,
+      imgUrl: DataTypes.TEXT
     },
     {}
   );
