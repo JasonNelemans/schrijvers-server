@@ -54,7 +54,7 @@ module.exports = {
           imgUrl: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1332&q=80'
         },
         {
-          title: "Vijfe Lorem Ipsum",
+          title: "Vijfde Lorem Ipsum",
           type: 'Waargebeurd',
           genre: 'Horror',
           wordCount: 1500,
