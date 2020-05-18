@@ -86,7 +86,7 @@ router.get("/user/:userId", async (req, res) => {
   }
 });
 
-router.get("/user/story/:userId/:storyId", async (req, res) => {
+router.get("/info/:userId/:storyId", async (req, res) => {
   try {
     const storyInfo = await Story.findOne({
       where: {
