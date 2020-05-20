@@ -2,13 +2,14 @@ const { Router } = require("express");
 const Story = require("../models").story;
 const Paragraph = require("../models/").paragraph;
 const User = require("../models").user;
+const Rating = require("../models").rating
 
 const router = new Router();
 
 router.get("/", async (req, res) => {
   try {
     const allStories = await Story.findAll({
-      include: [User],
+      include: [User, Rating],
       order: [["id", "ASC"]],
     });
 
