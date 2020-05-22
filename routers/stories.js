@@ -24,7 +24,7 @@ router.get("/story/:storyId", async (req, res) => {
   try {
     const oneStory = await Story.findOne({
       where: { id: req.params.storyId },
-      include: [User],
+      include: [User, Rating],
     });
 
     res.status(200).json(oneStory);
