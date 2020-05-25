@@ -2,13 +2,14 @@ const { Router } = require("express");
 const Story = require("../models").story;
 const Paragraph = require("../models/").paragraph;
 const User = require("../models").user;
+const Rating = require("../models").rating
 
 const router = new Router();
 
 router.get("/", async (req, res) => {
   try {
     const allStories = await Story.findAll({
-      include: [User],
+      include: [User, Rating],
       order: [["id", "ASC"]],
     });
 
@@ -23,7 +24,7 @@ router.get("/story/:storyId", async (req, res) => {
   try {
     const oneStory = await Story.findOne({
       where: { id: req.params.storyId },
-      include: [User],
+      include: [User, Rating],
     });
 
     res.status(200).json(oneStory);
@@ -112,6 +113,25 @@ router.patch("/clicktitle", async (req, res, next) => {
     res.json("updated title!");
   } catch (e) {
     next(e);
+  }
+});
+
+router.post('/giverating', async (req, res, next) => {
+  const { storyId, userId, amount } = req.body;
+  if(!storyId || !userId || !amount) {
+    return res.status(400).send("Need userId, storyId and amount for rating.");
+  }
+  try {
+    const newRating = await Rating.create({
+      userId, 
+      storyId,
+      amount
+    })
+    console.log('newRating: ', newRating);
+    return res.status(200).send('Rating given!');
+  }
+  catch (e) {
+    next(e)
   }
 });
 

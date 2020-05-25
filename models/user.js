@@ -20,7 +20,13 @@ module.exports = (sequelize, DataTypes) => {
     {}
   );
   user.associate = function(models) {
-    user.hasMany(models.story)
+    user.hasMany(models.story);
+    // user.belongsToMany(models.story, {
+    //   through: 'ratings',
+    //   foreignKey: 'userId '
+    // });
+    ///////////// ^^^^^^^^Thought many to many relations were established like this. 
+    user.hasMany(models.rating) //the above didn't work. This does. 
   };
   return user;
 };

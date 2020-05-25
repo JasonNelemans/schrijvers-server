@@ -20,6 +20,11 @@ module.exports = (sequelize, DataTypes) => {
   story.associate = function (models) {
     story.belongsTo(models.user);
     story.hasMany(models.paragraph);
+    // story.belongsToMany(models.user, {
+    //   through: 'ratings',
+    //   foreignKey: 'storyId'
+    // });
+    story.hasMany(models.rating)
   };
   return story;
 };
