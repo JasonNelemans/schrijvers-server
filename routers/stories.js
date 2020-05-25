@@ -116,4 +116,23 @@ router.patch("/clicktitle", async (req, res, next) => {
   }
 });
 
+router.post('/giverating', async (req, res, next) => {
+  const { storyId, userId, amount } = req.body;
+  if(!storyId || !userId || !amount) {
+    return res.status(400).send("Need userId, storyId and amount for rating.");
+  }
+  try {
+    const newRating = await Rating.create({
+      userId, 
+      storyId,
+      amount
+    })
+    console.log('newRating: ', newRating);
+    return res.status(200).send('Rating given!');
+  }
+  catch (e) {
+    next(e)
+  }
+});
+
 module.exports = router;
